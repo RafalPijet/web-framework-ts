@@ -1,1 +1,7 @@
-console.log('Test...')
+import { Eventings } from './models/Eventings';
+import { User } from './models/User';
+
+const user = new User({ id: 1 });
+
+
+user.fetch()
