@@ -1,9 +1,24 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Lopez",
-            "age": 47
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Lopez",
+      "age": 47
+    },
+    {
+      "name": "Kratos",
+      "age": 30,
+      "id": 2
+    },
+    {
+      "name": "Forest",
+      "age": 25,
+      "id": 3
+    },
+    {
+      "name": "Wow",
+      "age": 45,
+      "id": 4
+    }
+  ]
 }
