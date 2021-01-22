@@ -1,10 +1,12 @@
-import { Eventings } from './models/Eventings';
-import { User } from './models/User';
+// import { User } from './models/User';
+import { UserForm } from './views/UserForm';
 
-// const user = new User({ name: "Kratos", age: 30 });
-const user = User.buildUser({ name: "Wow", age: 45 })
-user.save();
-console.log(user.get('name'));
+const userForm = new UserForm(document.getElementById('root'));
+userForm.render();
 
-// console.log(user.get('name'));
-// user.save();
+// const collection = User.buildUserCollection();
+// collection.on('change', () => {
+//     console.log(collection);
+// })
+// collection.fetch();
+
