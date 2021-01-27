@@ -1,17 +1,17 @@
 import { AxiosPromise, AxiosResponse } from "axios";
 
-interface ModelAttributes<T> {
+export interface ModelAttributes<T> {
     get<K extends keyof T>(key: K): T[K];
     set(update: T): void;
     getAll(): T;
 }
 
-interface Events {
+export interface Events {
     on(eventName: string, callback: () => {}): void;
     trigger(eventName: string): void
 }
 
-interface Sync<T> {
+export interface Sync<T> {
     fetch(id: number): AxiosPromise;
     save(data: T): AxiosPromise;
 }
@@ -36,7 +36,7 @@ export class Model<T extends HasId> {
         this.events.trigger('change');
     }
 
-    fetch() {
+    fetch(): void {
         const id = this.get('id');
 
         if (typeof id !== 'number') {
@@ -47,7 +47,7 @@ export class Model<T extends HasId> {
         })
     }
 
-    save() {
+    save(): void {
         this.sync.save(this.attributes.getAll())
             .then((response: AxiosResponse): void => {
                 this.trigger('save');
